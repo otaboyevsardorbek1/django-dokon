@@ -102,3 +102,17 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+# Common IDEs
+*.swp
+.idea/
+.buildpath
+.settings
+atlassian-ide-plugin.xml
+.project
+.pydevproject
+.installed.cfg
+*.sublime-project
+*.sublime-workspace
+*.ropeproject
+
