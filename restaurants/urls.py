@@ -1,9 +1,8 @@
-from django.urls import path
-from django.conf.urls import re_path
+from django.conf.urls import url
 
 from . import views
 
 urlpatterns = [
-    re_path(r'r/(?P<restaurant_id>\d+)/?$', views.get_restaurant, name='get_restaurant'),
-    re_path(r'r/?$', views.delete_restaurant, name='delete_restaurant')
+    url(r'r/(?P<restaurant_id>\d+)/?$', views.get_restaurant, name='get_restaurant'),
+    url(r'r/?$', views.delete_restaurant, name='delete_restaurant')
 ]

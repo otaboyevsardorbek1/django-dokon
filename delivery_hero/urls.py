@@ -1,10 +1,10 @@
 from django.contrib import admin
-from django.urls import path, include
-from django.conf.urls import re_path
+from django.conf.urls import url, include
 from django.views.generic.base import RedirectView
 
 urlpatterns = [
-    re_path(r'^$', RedirectView.as_view(url='/admin', permanent=True)),
-    re_path(r'^', include('restaurants.urls')),
-    path('admin/', admin.site.urls),
+    url(r'^$', RedirectView.as_view(url='/admin', permanent=True)),
+    url(r'^', include('restaurants.urls')),
+    url(r'^graphql/?', include('api.urls')),
+    url('admin/', admin.site.urls),
 ]

@@ -29,8 +29,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # 3-d party apps
     'rest_framework',
+    'graphene_django',
     # new apps
-    'restaurants.apps.RestaurantsConfig'
+    'api',
+    'restaurants'
 ]
 
 MIDDLEWARE = [
@@ -48,7 +50,9 @@ ROOT_URLCONF = 'delivery_hero.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            'templates'
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
