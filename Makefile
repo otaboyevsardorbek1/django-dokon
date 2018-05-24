@@ -24,11 +24,11 @@ help:
 	{ lastLine = $$0 }' $(MAKEFILE_LIST)
 	@echo ''
 
-## starts docker compose(db+container) in background mode
+## starts Django server
 start:
 	python manage.py runserver
 
-## build and start docker-compose, apply migrations
+## install requirements, migrate, run server
 init:
 	pip install -r requirements.txt
 	make migrate

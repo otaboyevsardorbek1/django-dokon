@@ -42,8 +42,7 @@ OR
 ## Use
 - Get restaurant by ID: `/restaurant/<id>`
 - Delete restaurant: send DELETE request to url `/restaurant/` with JSON data `{id: <restaurant_id>}`
-- Create restaurant: use graphql (url `/graphql/`).
-Request example:
+- Create restaurant: use graphql (url `/graphql/`). Request example:
 ```
 mutation{
   createRestaurant(restaurantData: {name: "TestGraphQl", opensAt: "01:00:00", closesAt:"23:00:00"})
@@ -60,8 +59,7 @@ mutation{
 }
 ```
 - Update restaurant: use graphql (url `/graphql/`). ID is a must input, 
-other fields are optional
-Request example:
+other fields are optional. Request example:
 ```
 mutation{
   updateRestaurant(restaurantUpdateData: {id: 2, name: "New Name 2", opensAt:"23:59"}){
