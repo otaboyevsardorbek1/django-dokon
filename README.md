@@ -21,11 +21,70 @@ And the output would be
 ...
 }
 
+## Project info
+- Python 3.6
+- Django 1.11 LTS
+- GraphQL
+- Factories (factory boy) to create init data
+
 
 ## Deploy
 
-- install and activate virtual environment
-- `pip install requirements.txt`
+- install and activate virtual environment(`virtualenv -p python3.6 venv`)
+- `pip install -r requirements.txt`
 - `python manage.py migrate`
 - `python manage.py runserver`
+
+OR
+- install and activate virtual environment(`virtualenv -p python3.6 venv`)
+- use make file (`make <command>`). Use `make help` for help
+
+## Use
+- Get restaurant by ID: `/restaurant/<id>`
+- Delete restaurant: send DELETE request to url `/restaurant/` with JSON data `{id: <restaurant_id>}`
+- Create restaurant: use graphql (url `/graphql/`).
+Request example:
+```
+mutation{
+  createRestaurant(restaurantData: {name: "TestGraphQl", opensAt: "01:00:00", closesAt:"23:00:00"})
+  {
+    ok
+    message
+    restaurant {
+      id
+      name
+      opensAt
+      closesAt
+    }
+  }
+}
+```
+- Update restaurant: use graphql (url `/graphql/`). ID is a must input, 
+other fields are optional
+Request example:
+```
+mutation{
+  updateRestaurant(restaurantUpdateData: {id: 2, name: "New Name 2", opensAt:"23:59"}){
+    ok
+    message
+    restaurant {
+      name
+      opensAt
+      closesAt
+    }
+  }
+}
+```
+- Get all restaurants (additional option). Use graphql. Request example:
+```
+query{
+  getAllRestaurants {
+    id
+    name
+    opensAt
+    closesAt
+  }
+}
+```
+
 

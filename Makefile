@@ -30,8 +30,9 @@ start:
 
 ## build and start docker-compose, apply migrations
 init:
-	make start
+	pip install -r requirements.txt
 	make migrate
+	make start
 
 ## create migrations files for the Django
 migrations:
@@ -49,13 +50,7 @@ shell:
 chown:
 	sudo chown -R ${USER}:${USER} .
 
-## delete database
-dropdb:
-	rm -vf db.sqlite3
-
 ## drop db -> recreate db -> run migrations
 restart_db:
-	make stop
-	docker-compose rm -vf ras_db_service
-	make start
+	rm -vf db.sqlite3
 	make migrate

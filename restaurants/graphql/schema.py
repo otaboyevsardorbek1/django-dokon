@@ -1,8 +1,8 @@
 import graphene
 
+from .mutations import *
 from .resolvers import *
 from .types import *
-from .mutations import *
 
 
 class RestaurantsMutations(graphene.ObjectType):

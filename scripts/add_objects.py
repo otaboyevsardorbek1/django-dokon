@@ -1,7 +1,7 @@
 import os
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "delivery_hero.settings")
-
 import django
+
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "delivery_hero.settings")
 django.setup()
 
 from restaurants.factories.restaurant import RestaurantFactory
@@ -17,7 +17,7 @@ def add_restaurants():
     except Exception:
         pass
 
-    RestaurantFactory.create_batch(size=50)
+    RestaurantFactory.create_batch(size=20)
 
 if __name__ == '__main__':
     add_restaurants()
