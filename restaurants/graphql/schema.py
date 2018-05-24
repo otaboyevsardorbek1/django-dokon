@@ -7,6 +7,7 @@ from .mutations import *
 
 class RestaurantsMutations(graphene.ObjectType):
     create_restaurant = CreateRestaurant.Field()
+    update_restaurant = UpdateRestaurant.Field()
 
 
 class RestaurantsQuery(graphene.ObjectType):

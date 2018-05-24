@@ -1,1 +1,1 @@
-from .restaurant import RestaurantType, RestaurantInput
+from .restaurant import RestaurantType, RestaurantInput, UpdateRestaurantInput
